@@ -1,0 +1,4 @@
+PLACE THE BEAR IMAGES HERE:
+1. glitch_heart_bear.png
+2. ctrl_alt_esc_bear.png
+3. alert_bear.png

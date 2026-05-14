@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+:root {
+  --chrome: #E6E6E6;
+  --charcoal: #0A0A0A;
+  --graphite: #1A1A1A;
+  --cyan: #00F0FF;
+  --magenta: #FF00CB;
+  --red: #FF2D2D;
+  --font-inter: 'Inter', sans-serif;
+  /* Eurostile Extended would usually be a local font, using a fallback */
+  --font-heading: 'Inter', sans-serif; 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--charcoal);
+  color: var(--chrome);
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.premium-container {
+  position: relative;
+  width: 100%;
+  min-height: 500vh; /* For scrolling experience */
+}
+
+canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.overlay {
+  position: relative;
+  z-index: 2;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 2rem;
+  }
+  
+  .status-bar {
+    padding: 0.75rem 1rem;
+    font-size: 0.5rem;
+  }
+  
+  .corner-bracket {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .corner-tl, .corner-tr { top: 1rem; }
+  .corner-bl, .corner-br { bottom: 1rem; }
+  .corner-tl, .corner-bl { left: 1rem; }
+  .corner-tr, .corner-br { right: 1rem; }
+}
+
+.content-block {
+  max-width: 600px;
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .content-block h1 { font-size: 2.5rem !important; }
+  .content-block h2 { font-size: 2rem !important; }
+}
+
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+/* Technical UI Markers */
+.corner-bracket {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(230, 230, 230, 0.3);
+  pointer-events: none;
+}
+.corner-tl { top: 2rem; left: 2rem; border-right: none; border-bottom: none; }
+.corner-tr { top: 2rem; right: 2rem; border-left: none; border-bottom: none; }
+.corner-bl { bottom: 2rem; left: 2rem; border-right: none; border-top: none; }
+.corner-br { bottom: 2rem; right: 2rem; border-left: none; border-top: none; }
+
+.status-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(230, 230, 230, 0.1);
+  z-index: 100;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.system-label {
+  color: var(--chrome);
+  opacity: 0.6;
+}
+
+.active-value {
+  color: var(--cyan);
+  margin-left: 0.5rem;
+}
+
+/* Scroll Indicators */
+.scroll-hint {
+  position: fixed;
+  bottom: 2rem;
+  right: 4rem;
+  font-size: 0.6rem;
+  writing-mode: vertical-rl;
+  letter-spacing: 0.3em;
+  opacity: 0.4;
+  z-index: 10;
+}
+
+.hidden-mobile {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
