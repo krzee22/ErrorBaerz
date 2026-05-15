@@ -3,7 +3,7 @@
 import { useScroll } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useRef, useState } from 'react'
-import { ErrorBear } from './ErrorBear'
+import { ErrorBear } from '../Experience/ErrorBear'
 import * as THREE from 'three'
 
 export const Experience = () => {
