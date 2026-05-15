@@ -19,7 +19,7 @@ export const Scene = () => {
           <Experience />
         </ScrollControls>
         
-        <EffectComposer disableNormalPass>
+        <EffectComposer enableNormalPass={false}>
           <Bloom luminanceThreshold={0.8} mipmapBlur intensity={0.5} radius={0.4} />
           <Noise opacity={0.05} />
         </EffectComposer>
